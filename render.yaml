@@ -6,7 +6,7 @@ services:
     startCommand: "gunicorn app:app"
     envVars:
       - key: MONGO_URI
-        value: mongodb+srv://webhook_user:webhook123@cluster0.xxxx.mongodb.net/?retryWrites=true&w=majorityDB_NAME=webhook_db
+        value: mongodb+srv://webhook_user:Webhook123@cluster0.5v8i2rv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
       - key: DB_NAME
         value: webhook_db
       - key: COLLECTION_NAME
