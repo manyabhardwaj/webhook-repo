@@ -14,15 +14,15 @@ def index():
 @app.route('/webhook', methods=['GET', 'POST'])
 def webhook():
     if request.method == 'GET':
-        return "Webhook endpoint is live. Use POST method for GitHub events.", 200
+        return "✅ Webhook endpoint is live. Use POST for GitHub events.", 200
 
-    # POST logic: GitHub webhook triggers
-    print(" /webhook POST hit!")
+    # POST method (from GitHub)
+    print("✅ /webhook POST hit!")
     data = request.json
     event_type = request.headers.get('X-GitHub-Event')
-    print(" Event Type:", event_type)
-    print(" Payload:", data)
-    
+    print("👉 Event Type:", event_type)
+    print("📦 Payload:", data)
+
     ts = datetime.utcnow()
 
     try:
@@ -45,15 +45,15 @@ def webhook():
             }
 
         else:
-            print(" Ignored Event:", event_type)
+            print("❌ Ignored Event:", event_type)
             return "", 204
 
         collection.insert_one(doc)
-        print(" Saved event to MongoDB")
+        print("✅ Event saved to MongoDB")
         return "", 200
 
     except Exception as e:
-        print(f" Error handling webhook: {e}")
+        print(f"❌ Error handling webhook: {e}")
         return "Internal Server Error", 500
 
 if __name__ == "__main__":
