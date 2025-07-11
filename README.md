@@ -30,7 +30,7 @@ This project is built to receive GitHub webhook events (Push, Pull Request, Merg
 
 ## ✅ Example Output
 
-> Travis pushed to main on 1st April 2021 - 9:30 PM UTC  
+> Manya pushed to main on 1st April 2021 - 9:30 PM UTC  
 > Travis submitted a pull request from staging to master on 1st April 2021 - 9:00 AM UTC
 
 ---
